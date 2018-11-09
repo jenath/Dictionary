@@ -1,5 +1,5 @@
 window.onload = () => {
-  const search = document.querySelector("#search");
+  const search = document.querySelector("#searchBtn");
   const query = document.querySelector("#query");
   // request to Oxford dictionary API
   // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=your-api-key
