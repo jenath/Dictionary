@@ -1,4 +1,4 @@
-window.onload = () => {
+  window.onload = () => {
   const searchBtn = document.querySelector("#searchBtn");
   const query = document.querySelector("#query");
   const queryfield = document.querySelector(".queryfield");

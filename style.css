@@ -8,6 +8,8 @@
   font-size: 50pt;
   border: none;
   background-color: transparent;
+  margin-left: auto;
+  outline: none;
 }
 
 #searchBtn {
@@ -19,6 +21,9 @@
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .utility button {
