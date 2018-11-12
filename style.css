@@ -1,21 +1,41 @@
-.search {
-  display: flex;
-  justify-content: center;
+.queryfield {
+  border: 1px solid blue;
 }
 
-.search input {
-  min-width: 400px;
+.queryfield input {
+  min-width: 100px;
   text-align: center;
+  font-size: 50pt;
+  border: none;
+  background-color: transparent;
 }
 
-.utility, #card {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+#searchBtn {
+  border: none;
+  border-radius: 50%;
+  min-width: 75px;
+  height: 75px;
+  background-image: url("./search.png");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .utility button {
   width: 500px;
   height: 100px;
-  margin: 10px;
+  font-size: 50pt;
+}
+
+.utility, #card, .queryfield {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.divider{
+    width:20px;
+    height:auto;
+    display:inline-block;
 }

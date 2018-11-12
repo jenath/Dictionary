@@ -1,12 +1,16 @@
 window.onload = () => {
-  const search = document.querySelector("#searchBtn");
+  const searchBtn = document.querySelector("#searchBtn");
   const query = document.querySelector("#query");
+  const queryfield = document.querySelector(".queryfield");
+
   // request to Oxford dictionary API
   // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=your-api-key
 
+  queryfield.addEventListener('click', _ => {
+    query.focus();
+  });
 
-
-  search.addEventListener('click', _ => {
+  searchBtn.addEventListener('click', _ => {
     // if a description of a word is displayed remove it before adding the next word searched
     const card = document.querySelector("#card");
     if (card) card.parentNode.removeChild(card);
