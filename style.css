@@ -44,3 +44,26 @@
     height:auto;
     display:inline-block;
 }
+
+/*  CARD DISPLAY  */
+
+#card {
+  background-color: blue;
+  border-radius: 10%;
+  font-size: 40pt;
+  display: block;
+  padding: 1%;
+}
+
+#card h1, #card p {
+  margin-left: 5%;
+  position: relative;
+}
+
+#card button {
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
