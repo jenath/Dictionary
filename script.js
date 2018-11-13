@@ -1,10 +1,15 @@
 window.onload = () => {
+
+  let saved = {
+
+  }
+
+
   const searchBtn = document.querySelector("#searchBtn");
   const query = document.querySelector("#query");
   const queryfield = document.querySelector(".queryfield");
 
   let saveBtn = document.createElement('button');
-  saveBtn.textContent = 'save';
 
 
   queryfield.addEventListener('click', _ => {
@@ -53,5 +58,18 @@ window.onload = () => {
       card.appendChild(desc);
       document.body.appendChild(card);
     })
+  });
+
+  saveBtn.addEventListener('click', _ => {
+    let word = document.querySelector("#card h1").textContent;
+
+    let size = Object.keys(saved).length;
+    let check =  Object.keys(saved).some((key) => saved[key] == `${word}`);
+
+    if(!check) {
+      saved[`${size}`] = `${word}`;
+    }
+
+    console.log(saved);
   });
 }
