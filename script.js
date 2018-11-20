@@ -1,11 +1,10 @@
 window.onload = () => {
-
   const searchBtn = document.querySelector("#searchBtn");
   const query = document.querySelector("#query");
   const queryfield = document.querySelector(".queryfield");
+  const saveBtn = document.querySelectorAll(".utility button")[1];
 
-  let saveBtn = document.createElement('button');
-
+  let star = document.createElement('button');
 
   queryfield.addEventListener('click', _ => {
     query.focus();
@@ -15,6 +14,8 @@ window.onload = () => {
   // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=your-api-key
 
   let savedArr = [];
+
+  // Query search
 
   searchBtn.addEventListener('click', _ => {
     // if a description of a word is displayed remove it before adding the next word searched
@@ -36,7 +37,7 @@ window.onload = () => {
       word = word.charAt(0).toUpperCase() + word.slice(1);
       word = document.createTextNode(word);
       h1.appendChild(word);
-      h1.appendChild(saveBtn);
+      h1.appendChild(star);
       para.appendChild(desc);
       card.appendChild(h1);
       card.appendChild(para);
@@ -45,10 +46,15 @@ window.onload = () => {
 
       word = document.querySelector("#card h1").textContent;
 
-      if(savedArr.includes(word)) {
-        saveBtn.style.backgroundColor = "yellow";
+      // let storedData = localStorage.getItem("words");
+      // storedData = JSON.parse(storedData);
+
+      if(savedArr.includes(word) && localStorage.getItem("words") === null) {
+        star.style.backgroundColor = "yellow";
+      } else if (localStorage.getItem("words") !== null && localStorage.getItem("words").includes(word) || savedArr.includes(word)) {
+        star.style.backgroundColor = "yellow";
       } else {
-        saveBtn.style.backgroundColor = "transparent";
+        star.style.backgroundColor = "transparent";
       }
 
     }).catch(err => {
@@ -60,19 +66,44 @@ window.onload = () => {
     })
   });
 
-  saveBtn.addEventListener('click', _ => {
+  // Star to save word
+
+  star.addEventListener('click', _ => {
     let word = document.querySelector("#card h1").textContent;
     let size = savedArr.length;
 
+    if (localStorage.getItem("words") === null) {
+      localStorage.setItem("words", JSON.stringify(savedArr));
+    }
+
+    if (localStorage.getItem("words") !== null && star.style.backgroundColor === "transparent") {
+      let arr = JSON.parse(localStorage.getItem("words"));
+      arr.push(word);
+      let newArray = Array.from(new Set(arr));
+      localStorage.setItem("words", JSON.stringify(newArray));
+    } else if (star.style.backgroundColor === "yellow") {
+      let arr = JSON.parse(localStorage.getItem("words"));
+      let index = arr.indexOf(word);
+      if (index > -1) {
+        arr.splice(index, 1);
+      }
+      let newArray = Array.from(new Set(arr));
+      localStorage.setItem("words", JSON.stringify(newArray));
+    }
+
     if (!savedArr.includes(word)) {
       savedArr.push(word);
-      saveBtn.style.backgroundColor = "yellow";
+      star.style.backgroundColor = "yellow";
     } else {
       const index = savedArr.indexOf(word);
       savedArr.splice(index, 1);
-      saveBtn.style.backgroundColor = "transparent";
+      star.style.backgroundColor = "transparent";
     }
-
     console.log(savedArr);
+  });
+
+  // save button
+  saveBtn.addEventListener("click", _ => {
+    window.location = "../public/savedWords.html";
   });
 }
