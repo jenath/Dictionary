@@ -25,6 +25,7 @@ body {
 /* QUERY SEARCH BUTTON */
 
 #searchBtn {
+  outline: none;
   border: none;
   border-radius: 50%;
   min-width: 75px;
@@ -110,4 +111,30 @@ body {
 
 #card button:focus {
   outline: none;
+}
+
+
+/* SavedWords.html */
+
+/* li items */
+
+#listPageHeader {
+  text-align: center;
+}
+
+#savedList li {
+  text-align: center;
+  padding: 15px;
+  background-color: blue;
+  color: white;
+  font-size: 18pt;
+}
+
+#savedList li:hover {
+  background-color: orange;
+}
+
+#savedList li p {
+  color: black;
+  font-size: 12pt;
 }
