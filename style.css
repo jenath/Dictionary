@@ -1,7 +1,15 @@
+body {
+  background-color: lightblue;
+  padding: 20px;
+}
+
 /* QUERYFIELD FOR USER INPUT */
 
 .queryfield {
-  border: 1px solid blue;
+  background-color: white;
+  padding: 20px 0px;
+  max-width: 1015px;
+  margin: auto;
 }
 
 .queryfield input {
@@ -36,17 +44,21 @@
   width: 500px;
   height: 100px;
   font-size: 50pt;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 10px;
 }
 
 .utility, #card, .queryfield {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-sizing: border-box;
 }
 
 .divider{
-    width:20px;
+    width:15px;
     height:auto;
     display:inline-block;
 }
@@ -54,16 +66,24 @@
 /* CARD DISPLAY */
 
 #card {
-  background-color: blue;
-  border-radius: 10%;
   font-size: 40pt;
   display: block;
   padding: 1%;
+  max-width: 1015px;
+  margin: auto;
 }
 
-#card h1, #card p {
-  margin-left: 5%;
+#card h1 {
+  text-align: center;
   position: relative;
+}
+
+#card p {
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 #card button {
@@ -86,9 +106,6 @@
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #card button:focus {
