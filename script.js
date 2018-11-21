@@ -46,9 +46,6 @@ window.onload = () => {
 
       word = document.querySelector("#card h1").textContent;
 
-      // let storedData = localStorage.getItem("words");
-      // storedData = JSON.parse(storedData);
-
       if(savedArr.includes(word) && localStorage.getItem("words") === null) {
         star.style.backgroundColor = "yellow";
       } else if (localStorage.getItem("words") !== null && localStorage.getItem("words").includes(word) || savedArr.includes(word)) {
