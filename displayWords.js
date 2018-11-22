@@ -1,16 +1,18 @@
 let savedWords = JSON.parse(localStorage.getItem("words"));
 let savedList = document.querySelector("#savedList");
-let back = document.querySelector("h1 button");
+let back = document.querySelector("#back");
 
-// Removal button for word
+// create Li and append to dcoument
 
 savedWords.forEach(val => {
   let li = document.createElement('li');
   let textNode = document.createTextNode(val);
   li.appendChild(textNode);
+  li.setAttribute("draggable", "true");
   savedList.appendChild(li);
 })
 
+// Display description
 
 savedList.addEventListener("click", e => {
 
@@ -33,6 +35,14 @@ savedList.addEventListener("click", e => {
   }
 });
 
+// Back button redirect
+
 back.addEventListener('click', _ => {
-  window.location = "../public/index.html";
+  window.location = "../docs/index.html";
+});
+
+// drag to dustbin to remove items
+
+savedList.addEventListener('dragstart', _ => {
+  console.log('hello');
 })
