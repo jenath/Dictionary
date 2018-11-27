@@ -98,7 +98,7 @@ body {
 /* SAVE BUTTON */
 
 #card button {
-  background-image: url("/assets/star.png");
+  background-image: url("../assets/star.png");
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -134,7 +134,7 @@ body {
   width: 30px;
   height: 30px;
   background-color: transparent;
-  background-image: url(/assets/back.svg);
+  background-image: url(../assets/back.svg);
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
