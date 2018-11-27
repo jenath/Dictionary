@@ -103,10 +103,4 @@ window.onload = () => {
   saveBtn.addEventListener("click", _ => {
     window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
-
-  // anchor test
-
-  let a = document.querySelector('a');
-  a.href = "../savedWords.html";
-  console.log(a);
 }
