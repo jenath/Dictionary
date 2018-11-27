@@ -101,7 +101,7 @@ window.onload = () => {
 
   // save button
   saveBtn.addEventListener("click", _ => {
-    window.location = "https://jenath.github.io/savedWords.html";
+    window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
 
   // anchor test
