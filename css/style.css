@@ -172,10 +172,9 @@ body {
   font-size: 12pt;
 }
 
-/* dustbin */
+/* Delete Button */
 
-#dustbin {
-  background-color: red;
-  width: 100%;
-  height: 100px;
+.deleteBtn {
+  float: right;
+  vertical-align: middle;
 }
