@@ -38,7 +38,7 @@ savedList.addEventListener("click", e => {
 // Back button redirect
 
 back.addEventListener('click', _ => {
-  window.location = "../docs/index.html";
+  window.location = "../public/index.html";
 });
 
 // drag to dustbin to remove items

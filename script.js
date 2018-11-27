@@ -101,6 +101,6 @@ window.onload = () => {
 
   // save button
   saveBtn.addEventListener("click", _ => {
-    window.location = "../docs/savedWords.html";
+    window.location = "../public/savedWords.html";
   });
 }
