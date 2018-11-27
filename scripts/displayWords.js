@@ -39,7 +39,7 @@ savedList.addEventListener("click", e => {
 // Back button redirect
 
 back.addEventListener('click', _ => {
-  window.location = "../index.html";
+  window.location = "https://jenath.github.io/Dictionary/";
 });
 
 // drag to dustbin to remove items
