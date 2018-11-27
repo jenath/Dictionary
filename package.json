@@ -4,7 +4,7 @@
   "description": "https://medium.com/@martin.breuss/finding-a-useful-dictionary-api-52084a01503d",
   "main": "displayWords.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "public/index.html"
   },
   "repository": {
     "type": "git",
