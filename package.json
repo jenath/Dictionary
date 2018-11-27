@@ -2,9 +2,9 @@
   "name": "Dictionary",
   "version": "1.0.0",
   "description": "https://medium.com/@martin.breuss/finding-a-useful-dictionary-api-52084a01503d",
-  "main": "displayWords.js",
+  "main": "../public/index.html",
   "scripts": {
-    "start": "public/index.html"
+    "start": "../public/index.html"
   },
   "repository": {
     "type": "git",
