@@ -30,7 +30,7 @@ body {
   border-radius: 50%;
   min-width: 75px;
   height: 75px;
-  background-image: url(/assets/search.png);
+  background-image: url(../assets/search.png);
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
