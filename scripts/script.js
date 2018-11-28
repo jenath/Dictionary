@@ -23,7 +23,7 @@ window.onload = () => {
     if (card) card.parentNode.removeChild(card);
 
     // user search word and API call using the users imput
-    let word = query.value;
+    let word = query.value.trim();
     let url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=1b93ab08-66da-40b0-be26-fe48d7400286`;
 
     // API call to retrieve data & display it on the page
@@ -101,7 +101,7 @@ window.onload = () => {
 
   // save button
   saveBtn.addEventListener("click", _ => {
-    // window.location = "savedWords.html"
-    window.location = "https://jenath.github.io/Dictionary/savedWords.html";
+    window.location = "savedWords.html"
+    // window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
 }
