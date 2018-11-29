@@ -131,6 +131,12 @@ window.onload = () => {
     console.log(savedArr);
   });
 
+  // Enter button to query search result
+
+  queryfield.addEventListener("keyup", e => {
+    if(e.keyCode === 13) searchBtn.click();
+  })
+
   // Direct to saved page
 
   saveBtn.addEventListener("click", _ => {
