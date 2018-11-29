@@ -3,6 +3,8 @@ body {
   padding: 20px;
 }
 
+/* index.html */
+
 /* QUERYFIELD FOR USER INPUT */
 
 .queryfield {
@@ -71,6 +73,7 @@ body {
   padding: 1%;
   max-width: 1015px;
   margin: auto;
+  text-align: center;
 }
 
 #card h1 {
@@ -112,6 +115,17 @@ body {
   outline: none;
 }
 
+#error {
+  font-size: 42pt;
+  text-align: center;
+  padding: 100px;
+  box-sizing: border-box;
+  background-color: red;
+  max-width: 1015px;
+  margin: auto;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
 
 /* SavedWords.html */
 
@@ -140,6 +154,7 @@ body {
   border: none;
   border-radius: 50%;
   outline: none;
+  z-index: 1;
 }
 
 #back:hover {
@@ -188,4 +203,16 @@ body {
   position: absolute;
   right: 20px;
   margin-top: 6px;
+}
+
+/* History.html */
+
+/* Li elements */
+
+#historySection li {
+  text-align: center;
+  padding: 15px;
+  background-color: magenta;
+  color: white;
+  font-size: 21pt;
 }
