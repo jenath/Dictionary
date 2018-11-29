@@ -3,8 +3,8 @@ let history = JSON.parse(localStorage.getItem("history"));
 let historySection = document.querySelector("#historySection")
 
 back.addEventListener('click', _ => {
-  window.location = "../index.html"
-  // window.location = "https://jenath.github.io/Dictionary/";
+  // window.location = "../index.html"
+  window.location = "https://jenath.github.io/Dictionary/";
 });
 
 history.forEach(val => {

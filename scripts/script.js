@@ -140,14 +140,15 @@ window.onload = () => {
   // Direct to saved page
 
   saveBtn.addEventListener("click", _ => {
-    window.location = "savedWords.html"
-    // window.location = "https://jenath.github.io/Dictionary/savedWords.html";
+    // window.location = "savedWords.html"
+    window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
 
   // Direct to history page
 
   history.addEventListener('click', _ => {
-    window.location = "history.html";
+    // window.location = "history.html";
+    window.location = "https://jenath.github.io/Dictionary/history.html";
   })
 
 }
