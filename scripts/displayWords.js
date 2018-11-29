@@ -3,6 +3,7 @@ let savedList = document.querySelector("#savedList");
 let back = document.querySelector("#back");
 
 // create Li and append to document
+
 if (savedWords) {
   savedWords.forEach(val => {
     let li = document.createElement('li');

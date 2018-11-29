@@ -15,19 +15,30 @@ window.onload = () => {
   // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=your-api-key
 
   let savedArr = [];
+  let historyArr = [];
 
   // Query search
 
   searchBtn.addEventListener('click', _ => {
-    // if a description of a word is displayed remove it before adding the next word searched
+
+    // If a description of a word is displayed remove it before adding the next word searched
+
     const card = document.querySelector("#card");
-    if (card) card.parentNode.removeChild(card);
+    const error = document.querySelector("#error");
+
+    if (card) {
+      card.parentNode.removeChild(card);
+    } else if (error) {
+      error.parentNode.removeChild(error);
+    }
 
     // user search word and API call using the users imput
+
     let word = query.value.trim();
     let url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=1b93ab08-66da-40b0-be26-fe48d7400286`;
 
     // API call to retrieve data & display it on the page
+
     fetch(url).then(resp => {
       return resp.json();
     }).then(data => {
@@ -55,10 +66,30 @@ window.onload = () => {
         star.style.backgroundColor = "transparent";
       }
 
+      // Save searched work in history
+
+      // Check to see if history array exists in localStorage
+
+      if (localStorage.getItem("history")) {
+        historyArr = JSON.parse(localStorage.getItem("history"));
+      }
+
+      // Check the length of the history array
+
+      if (historyArr.length > 9) {
+        historyArr.pop();
+      }
+
+      if (card) {
+        word = word.charAt(0).toUpperCase() + word.slice(1);
+        historyArr.unshift(word);
+        localStorage.setItem("history", JSON.stringify(historyArr));
+      }
+
     }).catch(err => {
       let card = document.createElement('section');
       let desc = document.createTextNode('Sorry that word does not exist');
-      card.setAttribute("id", "card");
+      card.setAttribute("id", "error");
       card.appendChild(desc);
       document.body.appendChild(card);
     })
@@ -100,13 +131,15 @@ window.onload = () => {
     console.log(savedArr);
   });
 
-  // save button
+  // Direct to saved page
+
   saveBtn.addEventListener("click", _ => {
     window.location = "savedWords.html"
     // window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
 
-  // History
+  // Direct to history page
+
   history.addEventListener('click', _ => {
     window.location = "history.html";
   })
