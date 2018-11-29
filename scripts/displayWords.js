@@ -42,28 +42,30 @@ if (deleteBtn) {
 // Display description
 
 savedList.addEventListener("click", e => {
-  if (event.target.children.length < 2) {
+  if (e.target.tagName == 'LI' && e.target.children.length == 1) {
     let word = e.target.textContent;
     let url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=1b93ab08-66da-40b0-be26-fe48d7400286`;
-
     fetch(url).then(resp => {
       return resp.json();
     }).then(data => {
       let para = document.createElement('p');
       let desc = document.createTextNode(data[0].shortdef[0]);
+      para.style.display = "block";
       para.appendChild(desc);
       e.target.appendChild(para);
     });
-  } else if (event.target.children[1].style.display === "none") {
-    event.target.children[1].style.display = "block";
+  } else if (e.target.tagName == 'P') {
+    e.target.style.display = "none";
+  } else if (e.target.tagName == 'LI' && e.target.children[1].style.display == "block") {
+    e.target.children[1].style.display = "none";
   } else {
-    event.target.children[1].style.display = "none";
+    e.target.children[1].style.display = "block";
   }
 });
 
 // Back button redirect
 
 back.addEventListener('click', _ => {
-  // window.location = "../index.html"
-  window.location = "https://jenath.github.io/Dictionary/";
+  window.location = "../index.html"
+  // window.location = "https://jenath.github.io/Dictionary/";
 });

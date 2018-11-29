@@ -3,6 +3,7 @@ window.onload = () => {
   const query = document.querySelector("#query");
   const queryfield = document.querySelector(".queryfield");
   const saveBtn = document.querySelectorAll(".utility button")[1];
+  const history = document.querySelectorAll(".utility button")[0];
 
   let star = document.createElement('button');
 
@@ -101,7 +102,13 @@ window.onload = () => {
 
   // save button
   saveBtn.addEventListener("click", _ => {
-    // window.location = "savedWords.html"
-    window.location = "https://jenath.github.io/Dictionary/savedWords.html";
+    window.location = "savedWords.html"
+    // window.location = "https://jenath.github.io/Dictionary/savedWords.html";
   });
+
+  // History
+  history.addEventListener('click', _ => {
+    window.location = "history.html";
+  })
+
 }
