@@ -65,12 +65,6 @@ body {
     display:inline-block;
 }
 
-@media only screen and (max-width: 490px) {
-  .utility button {
-    font-size: 32pt;
-  }
-}
-
 /* CARD DISPLAY */
 
 #card {
@@ -95,15 +89,15 @@ body {
   text-align: center;
 }
 
+
+/* SAVE BUTTON - STAR */
+
 #card button {
   position: absolute;
-  right: 0;
-  margin-right: 5%;
   top: 50%;
   transform: translateY(-50%);
+  margin-left: 50px;
 }
-
-/* SAVE BUTTON */
 
 #card button {
   background-image: url(../assets/star.png);
@@ -221,4 +215,27 @@ body {
   background-color: magenta;
   color: white;
   font-size: 21pt;
+}
+
+/* Media query for screen resize */
+
+@media only screen and (max-width: 490px) {
+  .utility button {
+    font-size: 32pt;
+  }
+
+  #card h1, p, .queryfield input {
+    font-size: 32pt;
+  }
+
+  #card button {
+    min-width: 40px;
+    height: 40px;
+    margin-left: 20px;
+  }
+
+  #searchBtn {
+    min-width: 40px;
+    height: 40px;
+  }
 }
