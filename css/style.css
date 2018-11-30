@@ -65,6 +65,12 @@ body {
     display:inline-block;
 }
 
+@media only screen and (max-width: 490px) {
+  .utility button {
+    font-size: 32pt;
+  }
+}
+
 /* CARD DISPLAY */
 
 #card {
